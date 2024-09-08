@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button changeTextVisibilityBtn;
     private TextView textViewGroup, textViewName;
-    private boolean isVisibleNow = true;
+    private boolean isTextVisibleNow, isPictureVisibleNow = true;
     private ImageButton changePictureVisibilityBtn;
     private ImageView imageCenterView;
 
@@ -33,14 +33,25 @@ public class MainActivity extends AppCompatActivity {
         changeTextVisibilityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isVisibleNow) {
+                if(isTextVisibleNow) {
                     textViewGroup.setVisibility(View.INVISIBLE);
                     textViewName.setVisibility(View.INVISIBLE);
                 } else {
                     textViewGroup.setVisibility(View.VISIBLE);
                     textViewName.setVisibility(View.VISIBLE);
                 }
-                isVisibleNow = !isVisibleNow;
+                isTextVisibleNow = !isTextVisibleNow;
+            }
+        });
+        changePictureVisibilityBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(isPictureVisibleNow) {
+                    imageCenterView.setVisibility(View.INVISIBLE);
+                } else {
+                    imageCenterView.setVisibility(View.VISIBLE);
+                }
+                isPictureVisibleNow = !isPictureVisibleNow;
             }
         });
     }
